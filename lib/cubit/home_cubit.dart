@@ -6,6 +6,22 @@ import '../model/user_model.dart';
 
 part 'home_state.dart';
 
+// class HomeCubit extends Cubit<HomeState> {
+//   HomeCubit(this.service) : super(const HomeState());
+
+//   final HomeService service;
+
+//   Future<void> getUsers() async {
+//     emit(const HomeState(status: FetchStatus.loading));
+//     final users = await service.getUsers();
+//     if (users != null) {
+//       emit(HomeState(status: FetchStatus.success, users: users));
+//     } else {
+//       emit(const HomeState(status: FetchStatus.error));
+//     }
+//   }
+// }
+
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit(this.service) : super(const HomeState());
 
@@ -13,9 +29,13 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future<void> getUsers() async {
     emit(const HomeState(status: FetchStatus.loading));
+
     final users = await service.getUsers();
     if (users != null) {
-      emit(HomeState(status: FetchStatus.success, users: users));
+      emit(HomeState(
+        status: FetchStatus.success,
+        users: users,
+      ));
     } else {
       emit(const HomeState(status: FetchStatus.error));
     }
