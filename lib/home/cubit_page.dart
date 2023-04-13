@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../cubit/home_cubit.dart';
 import '../model/user_model.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class CubitPage extends StatelessWidget {
+  const CubitPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
